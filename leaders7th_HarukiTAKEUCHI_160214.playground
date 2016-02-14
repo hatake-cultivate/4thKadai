@@ -1,0 +1,71 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var number: Int = 0
+
+func isAho() ->Bool{
+    //問題1：数字が3の倍数ならtrueを返す
+    if number%3 == 0 {
+        return true
+    }
+    
+    //問題2：一の位が3の倍数ならtrueを返す
+    if number%10 == 3 {
+        return true
+    }
+    
+    //問題3：10の位が３であるかどうか
+    if (number/10)%10 == 3 {
+        return true
+    }
+    
+    return false
+}
+
+func plusButton(){
+    number = number + 1
+    if isAho() == true {
+        print("\(number)ﾍ(ﾟ∀ﾟﾍ)ｱﾋｬ")
+    } else {
+        print("\(number)(゜o゜)")
+    }
+}
+
+for (var i = 0; i < 20; i++){
+    isAho()
+    plusButton()
+}
+
+
+func fizzbuzz(){
+    //1から100まで順に出力し3の倍数のときには”Life is Tech!”と出力し5の倍数の ときには”Leaders7th”と出力し、15の倍数のときには”Life is Tech! leaders”と 出力してください。
+/*    for (var j = 1; j <= 100; j++){
+        if (j%3 == 0)&&(j%15 != 0) {
+            print("Life is Tech!")
+        }
+        if (j%5 == 0)&&(j%15 != 0) {
+            print("Leaders7th")
+        }
+        if j%15 == 0 {
+            print("Life is Tech! leaders")
+        }
+        if (j%3 != 0)&&(j%5 != 0)&&(j%15 != 0) {
+            print(String(j))
+        }
+    }
+*/
+    for (var j = 1; j <= 100; j++){
+        if j%15 == 0 {
+            print("Life is Tech! leaders")
+        }else if j%3 == 0 {
+            print("Life is Tech!")
+        }else if j%5 == 0 {
+            print("Leaders7th")
+        }else{
+            print(String(j))
+        }
+    }
+}
+
+fizzbuzz()
